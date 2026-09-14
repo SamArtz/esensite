@@ -1,0 +1,547 @@
+/* Documento CSS - ESEN */
+body{
+	background: #DFDFDF url(imagenes/fondo.png) repeat-x;
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+}
+div.incompatible{
+	background: url(imagenes/fondoIncompatible.png);
+	height: 50px;
+	color: #c73838;
+	padding: 8px 0px 0px 0px;
+	display: none;
+}
+	div.incompatible table{
+		margin: 0px auto 0px auto;
+		border-collapse: collapse;
+	}
+		div.incompatible td{
+			padding 4px;
+			vertical-align: middle;
+		}
+	div.incompatible img{
+		margin-left: 10px;
+		border: 0px;
+	}
+div.principal{
+	box-shadow: 0px 4px 20px #CCC;
+	width: 1000px;
+	margin: 0px auto 0px auto;
+}
+/* Objetos de principal */
+	div.iniSuperior{}
+	div.iniInferior{
+		background: url(imagenes/fondoMensajes.png);
+		width: 1000px;
+		height: 150px;
+	}
+		div.iniInferior div{
+			color: #FFF;
+			display: block;
+			float: left;
+			margin: 0px;
+			padding: 12px 22px 12px 22px;
+			height: 130px;
+			line-height: 18px;
+		}
+		div.iniInferior span{
+			color: #60b4ff;
+		}
+		div.iniInferior a{
+			color: #FFF;
+		}
+		div.servicios{
+			width: 272px;
+		}
+		div.noticias{
+			width: 373px;
+		}
+		div.sitios{}
+		div.encabezado{
+		background: url(img/encabezado.png) no-repeat;
+		background-size: 100% 101%; /* or cover with correct aspect */
+		height: 161px;
+		border-bottom: 1px solid #1237e0;
+	}
+		div.menu{
+			float: left;
+			margin: 132px 0px 0px 50px;
+			height: 21px;
+			padding: 0px;
+		}
+			a.menuPrincipal{
+				display: inline-block;
+				height: 21px;
+				padding: 8px 10px 0px 10px;
+				text-decoration: none;
+				color: #003564;
+				font-weight: bold;
+				box-sizing: content-box !important;
+			}
+			a.menuPrincipal:hover{
+				box-shadow: 0px 0px 3px #666;
+				background: #FFF;
+			}
+			a.menuPrincipalActivo{
+				display: inline-block;
+				height: 21px;
+				padding: 8px 10px 0px 10px;
+				text-decoration: none;
+				color: #003564;
+				font-weight: bold;
+				box-shadow: 0px 0px 3px #666;
+				background: #FFF;
+			}
+			div.submenu{
+				position: absolute;
+				background: #EEE url(imagenes/fondoSubMenus.png) repeat-x;
+				box-shadow: 0px 4px 4px #666;
+				display: none;
+			}
+				div.submenu a{
+					display: block;
+					padding: 8px 20px 8px 8px;
+					text-decoration: none;
+					color: #003564;
+					padding-left: 4px;
+					border-bottom: 1px solid #DDD;
+				}
+				div.submenu a:hover{
+					background: #ededed url(imagenes/fondoSubMenu.png) repeat-x;
+				}
+		div.autenticacion{
+			float: right;
+			width: 242px;
+			color: #FFF;
+			padding-top: 13px;
+		}
+			div.autenticacion h1{
+				font-size: 18px;
+				font-weight: normal;
+				margin: 0px;
+				padding: 0px 0px 18px 0px;
+			}
+			div.autenticacion form{
+				margin: 0px;
+				padding: 0px;
+			}
+				div.autenticacion table{
+					border-collapse: collapse;
+				}
+					div.autenticacion td{
+						height: 30px;
+						min-width: 80px;
+					}
+						div.autenticacion input{
+							border: 0px;
+							width: 112px;
+							height: 19px;
+						}
+			div.autenticacion div{
+				margin-top: 34px;
+				line-height: 16px;
+			}
+				img.foto{
+					width: 59px;
+					border: 1px solid #FFF;
+					float: left;
+					display: block;
+					margin: 0px 16px 0px 0px;
+				}
+	div.principalSinIngreso{
+		width: 400px;
+		margin: 50px auto 0px auto;
+	}
+		div.ingresoUsuario{
+			border: 1px solid #DDD;
+			padding: 40px;
+			background: #F9F9f9;
+			box-shadow: #CCC 0px 0px 16px;
+			color: #264384;
+			background: linear-gradient(to bottom, #264384 150px, #fff 150px);
+			font-size: 13px;
+		}
+			div.ingresoUsuario h1{
+				font-size: 22px;
+				font-weight: normal;
+				margin: 0px 0px 0px 0px;
+				padding: 0px 0px 60px 90px;
+				color: #FFF;
+				background: url(imagenes/logoEsenIntro.png) no-repeat;
+				background-size: 66px 73px;
+			}
+				div.ingresoUsuario h1 p{
+					font-size: 13px;
+					margin: 10px 0px 0px 0px;
+					padding: 0px;
+				}
+			div.ingresoUsuario h2{
+				font-size: 20px;
+				font-weight: normal;
+				margin: 0px 0px 10px 0px;
+				padding: 0px;
+			}
+			div.ingresoUsuario form{
+				line-height: 40px;
+			}
+			div.ingresoUsuario input[type="text"], input[type="password"]{
+				border: 1px solid #BBCFE3;
+				padding: 10px;
+				width: calc(100% - 22px);
+			}
+			div.ingresoUsuario input[type="submit"]{
+				width: 100%;
+				border: 0px;
+				color: #FFF;
+				padding: 10px;
+				background-color: #264384;
+				text-align: center;
+				font-size: 13px;
+				margin-top: 20px;
+				cursor: pointer;
+			}
+				div.ingresoUsuario input[type="submit"]:hover{
+					background-color: #162f67;
+				}
+			div.ingresoUsuario input[type="button"]{
+				width: 100%;
+				border: 0px;
+				color: #FFF;
+				padding: 10px;
+				background-color: #ab441f;
+				text-align: center;
+				font-size: 13px;
+				margin-top: 20px;
+				cursor: pointer;
+			}
+				div.ingresoUsuario input[type="button"]:hover{
+					background-color: #953310;
+				}
+	div.modulo{}
+		div.modulo h1{
+			background: #4A6F90 url(imagenes/fondoTitulo1.png) no-repeat;
+			border-bottom: 1px solid #FFF;
+			margin: 0px;
+			font-size: 15px;
+			color: #FFF;
+			height: 27px;
+			padding: 8px 0px 0px 20px;
+			box-sizing: content-box !important;
+		}
+		div.contenido{
+			border-top: 2px solid #4A6F90;
+			background: #FFF url(imagenes/fondoContenido.png) repeat-x bottom;
+			padding: 20px;
+		}
+			div.contenido h2{
+				background: url(imagenes/fondoTitulo2.png) no-repeat;
+				color: #003564;
+				font-weight: lighter;
+				font-size: 14px;
+				margin: 0px 0px 12px 0px;
+				padding: 0px 0px 4px 12px;
+				border-bottom: 1px solid #DFDFDF;
+			}
+			div.contenido h3{
+				color: #c45527;
+				background: #FFF4EA;
+				font-weight: bold;
+				font-size: 13px;
+				margin: 0px 0px 12px 16px;
+				padding: 4px 8px 4px 8px;
+				border-bottom: 1px solid #E9C8A9;
+			}
+			div.nivel2{
+				padding: 0px 0px 0px 12px;
+			}
+				div.nivel2 p{
+					padding-left: 20px;
+					padding-right: 12px;
+					text-align: justify;
+					line-height: 16px;
+				}
+				div.nivel2 ol{
+					padding-left: 50px;
+					padding-right: 12px;
+					text-align: justify;
+				}
+				div.nivel2 li{
+					line-height: 16px;
+				}
+			p.contenido{
+				margin: 8px 12px 8px 12px;
+			}
+			table.informacion{
+				margin: 0px 12px 8px 12px;
+				color: #003564;
+			}
+				table.informacion td{
+					vertical-align: top;
+					padding: 0px 4px 10px 4px;
+				}
+				table.informacion tr td:first-child{
+					color: #232323;
+				}
+				table.informacion input[type="text"], input[type="password"]{
+					border: 1px solid #BBCFE3;
+				}
+			div.alerta{
+				background: #FFFFD0 url(imagenes/fondoAlerta.png) no-repeat;
+				padding: 16px 16px 16px 60px;
+				color: #F00;
+			}
+			div.aviso{
+				background: #E9F7FD url(imagenes/fondoAviso.png) no-repeat;
+				padding: 16px 16px 16px 52px;
+				color: #003564;
+			}
+			div.panelIzquierdo{
+				float: left;
+				width: 200px;
+			}
+				div.panelIzquierdo a{
+					display: block;
+					padding: 8px;
+					border-bottom: 1px solid #DDD;
+					margin: 0px 12px 0px 12px;
+					text-decoration: none;
+				}
+				div.panelIzquierdo a:hover{
+					background: #F9F9f9;
+				}
+				div.panelIzquierdo p{
+					padding: 8px;
+					margin: 28px 12px 12px 12px;
+					border: 1px solid #EEE;
+					font-size: 10px;
+					background: #F9F9f9;
+				}
+			div.panelDerecho{
+				margin-left: 220px;
+			}
+				img.fotoGrande{
+					border: 1px solid #DDD;
+					float: left;
+					display: block;
+					margin: 0px 16px 0px 20px;
+					height: 100px;
+				}
+			div.finModulo{
+				clear: both;
+			}
+	div.informacion{
+		color: #404040;
+		margin-top: 12px;
+		font-size: 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+		div.autor{
+			padding-bottom: 20px;
+		}
+		div.tiempo{
+			text-align: right;
+			white-space: nowrap;
+		}
+/* Objetos Genericos */
+select{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	border: 1px solid #BBCFE3;
+}
+textarea{
+	border: 1px solid #BBCFE3;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	padding: 8px;
+}
+input{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+}
+	input.boton1{
+		width: 112px;
+		height: 19px;
+		background: url(imagenes/fondoBoton1.png);
+		color: #003564;
+		text-align: center;
+	}
+		input.boton1:hover{
+			cursor: pointer;
+			background: url(imagenes/fondoBoton1Sobre.png);
+		}
+		input.boton2{
+			position: absolute;
+			top:125px;
+			left: 1285px;   /* or right: Zpx */
+			width: 112px;
+			height: 19px;
+		}
+		input.boton2:hover{
+			cursor: pointer;
+			/*background: url(imagenes/fondoBoton2Sobre.png);*/
+		}
+	input.boton3{
+		width: 130px;
+		height: 21px;
+		background: url(imagenes/fondoBoton3.png);
+		color: #003564;
+		text-align: center;
+		border: 1px solid #BFD4E7;
+	}
+		input.boton3:hover{
+			cursor: pointer;
+			background: url(imagenes/fondoBoton3Sobre.png);
+		}
+	input.boton4{
+		width: 160px;
+		height: 21px;
+		background: url(imagenes/fondoBoton4.png);
+		color: #003564;
+		text-align: center;
+		border: 1px solid #BFD4E7;
+	}
+		input.boton4:hover{
+			cursor: pointer;
+			background: url(imagenes/fondoBoton4Sobre.png);
+		}
+table.estandar{
+	border-collapse: collapse;
+	margin: 8px 12px 8px 12px;
+}
+	table.estandar th{
+		background: #DFDFDF;
+		padding: 4px;
+		font-weight: normal;
+		border: 1px solid #DFDFDF;
+	}
+	table.estandar td{
+		border: 1px solid #DFDFDF;
+		padding: 4px;
+	}
+	td.numeros{
+		text-align: right;
+	}
+	td.centrado{
+		text-align: center;
+	}
+	table.estandar tfoot td{
+		background: #DFDFDF;
+	}
+table.sinbordes{
+	margin: 8px 12px 8px 12px;
+}
+	table.sinbordes td{
+		padding: 4px;
+	}
+span.informacion{
+	color: #AAA;
+	font-size: 10px;
+}
+span.obligatorio{
+	color: #C00;
+	font-size: 10px;
+}
+div.insolvencia{
+	padding: 20px;
+	background: #9d370d url(imagenes/fondoInsolvencia.png) no-repeat;
+	margin-bottom: 20px;
+	color: #FFF;
+}
+	table.insolvencia{
+		border-collapse: collapse;
+		width: 100%;
+	}
+		table.insolvencia thead td{
+			text-align: center;
+		}
+		table.insolvencia td{
+			padding: 8px 12px 8px 12px;
+		}
+		table.insolvencia tbody td{
+			border-top: 1px solid #c45527;
+		}
+/* Clases Unicas por Modulo */
+/* Modulo: inicio */
+div.panel1{
+	width: 380px;
+	float: left;
+	margin-right: 20px;
+}
+	div.panel1 td:first-child{
+		width: 126px;
+	}
+div.panel2{
+	width: 360px;
+	float: left;
+	margin-right: 20px;
+}
+div.panel3{
+	width: 180px;
+	float: left;
+}
+a.ayuda{
+	font-size: 10px;
+}
+div.graduacion{
+	padding: 10px;
+	margin: 20px 0px 10px 0px;
+	border: 1px solid #EEE;
+	background: #F9F9f9;
+}
+	div.graduacion h4{
+		color: #003564;
+		margin: 0px 0px 10px 0px;
+	}
+div.infoColores{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #AAA;
+	margin-left: 12px;
+}
+/* Modulo: perfil */
+div.emergente{
+	position: absolute;
+	border: 1px solid #EEE;
+	margin: 0px 0px 0px -400px;
+	padding: 12px;
+	background: #FFF;
+	width: 800px;
+	z-index: 5;
+	box-shadow: 0px 0px 10px #1C4986;
+	left: 50%;
+}
+	a.cerrar{
+		position: absolute;
+		left: 50%;
+		margin-left: 378px;
+	}
+/* Modulo: publinotas */
+div.cum{
+	border: 1px solid #DDD;
+	padding: 6px;
+	width: 50px;
+	float: right;
+	background: #EEE;
+	margin-right: 8px;
+	text-align: center;
+}
+div.cum span{
+	font-size: 20px;
+	color: #4A6F90;
+}
+/* Modulo: inscripciona */
+a.grupos{
+	border: 1px solid #ddd;
+	padding: 12px;
+	display: block;
+	text-decoration: none;
+	background: #F9F9f9;
+}
+a.grupos:hover{
+	background: #FFF;
+}

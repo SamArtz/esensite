@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ESEN - Registro Acad&eacute;mico</title>
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+<link href="ESEN - Registro Académico_files/esen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="principalSinIngreso">
+	<div class="ingresoUsuario">
+		<h1>Registro Acad&eacute;mico</h1>
+		<h2>Ingreso al sistema</h2>
+
+		<div id="mensajeError" class="alerta" style="display: none; margin-bottom: 12px;"></div>
+
+		<form onsubmit="return validarIngreso();" autocomplete="off">
+			<input type="text" id="usuario" placeholder="Correo institucional" autofocus /><br>
+			<input type="password" id="clave" placeholder="PIN" /><br>
+			<input type="submit" value="Ingresar">
+			<input type="button" value="Cancelar">
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+// Credenciales de la replica (solo demo local)
+var USUARIO_VALIDO = "20245456@esen.edu.sv";
+var CARNET_VALIDO  = "20245456";
+var CLAVE_VALIDA   = "Messi10tilin";
+
+function validarIngreso(){
+	var usuario = document.getElementById("usuario").value.trim().toLowerCase();
+	var clave   = document.getElementById("clave").value;
+	var error   = document.getElementById("mensajeError");
+
+	if(usuario === "" || clave === ""){
+		error.textContent = "Ingrese su correo institucional y PIN.";
+		error.style.display = "block";
+		return false;
+	}
+
+	var usuarioOk = (usuario === USUARIO_VALIDO || usuario === CARNET_VALIDO);
+
+	if(usuarioOk && clave === CLAVE_VALIDA){
+		window.location.href = "ESEN - Registro Académico.html";
+		return false;
+	}
+
+	error.textContent = "Correo o PIN incorrecto.";
+	error.style.display = "block";
+	document.getElementById("clave").value = "";
+	return false;
+}
+</script>
+
+</body>
+</html>

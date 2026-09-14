@@ -1,0 +1,303 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+                                                        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                                                        <meta name="csrf-token" content="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02">
+                                                        <title>ESEN - Registro Académico</title>
+                                                        <link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+                                                        <link href="./ESEN - Registro Académico_files/esen.css" rel="stylesheet" type="text/css">
+                                                        <script src="javascripts/sistema/tiempo.js?v=2" type="text/javascript"></script>
+                                                        <script src="javascripts/sistema/general.js" type="text/javascript"></script>
+                                        <link rel="stylesheet" type="text/css" href="chrome-extension://mfidniedemcgceagapgdekdbmanojomk/css/content-shared.css"><link rel="stylesheet" type="text/css" href="chrome-extension://mfidniedemcgceagapgdekdbmanojomk/css/content-lite.css"></head>
+                                        <body onload="inicIniciarTiempo('September 14, 2026 14:26:26');">
+                                                <div class="principal">
+                                                        <div class="encabezado">
+                        <div class="menu"><a href="./ESEN - Registro Académico.html" class="menuPrincipal">Inicio</a> |
+                        <a href="./miperfil.html" class="menuPrincipal">Mi Perfil</a> |
+                        <a href="./curriculo.html" class="menuPrincipal">Currículo</a> | <a name="m4" id="m4" href="./notas.html" class="menuPrincipal">Notas</a>
+ | <a name="m2" id="m2" href="./inscripcion.html" class="menuPrincipal">Inscripción</a>
+ | <a name="m3" id="m3" href="" class="menuPrincipal">Evaluación</a>
+ | <a href="" class="menuPrincipal">Ayudantes</a></div>
+                        <div class="autenticacion">Usted está identificado/a como:
+                                        <div>
+                                                <img src="archivo.php?hac=vfus" class="foto">
+                                                20245456<br>
+                                                Eduardo Javier<br>
+                                                Moreira Duarte<br><br>
+                                                <input type="submit" value="Cerrar Sesión" class="boton2" onclick="document.location.href='./login.html';">
+                                        </div></div>
+                </div>
+                <div class="modulo">
+                                <link rel="stylesheet" href="apariencia/curriculum.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+        <script src="javascripts/sistema/ajax.js" type="text/javascript"></script>
+        <script src="javascripts/sistema/curriculum.js" type="text/javascript"></script>
+        <script src="javascripts/otros/jquery-3.2.1.js"></script>
+        <script src="javascripts/otros/popper.min.js"></script>
+        <script src="javascripts/otros/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="apariencia/bootstrap.min.css">
+        <link rel="stylesheet" href="apariencia/bootstrap-theme.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!--<script src="javascripts/otros/jquery.min.js"></script>-->
+        <script src="javascripts/otros/bootstrap.min.js"></script>
+
+        <script src="javascripts/sistema/cv/jquery.imgareaselect.js" type="text/javascript"></script>
+        <script src="javascripts/sistema/cv/jquery.form.js"></script>
+        <link rel="stylesheet" href="apariencia/imgareaselect.css">
+        <script src="javascripts/sistema/cv/functions.js"></script>
+        <link rel="stylesheet" href="apariencia/esen.css">
+        <script>
+        $(document).ready(function() {
+            $('#empresa').on('keyup', function() {
+                var empresa = $(this).val();
+                var dataString = 'empresa='+empresa;
+        	$.ajax({
+                    type: 'POST',
+                    url: 'modulos/curriculum/buscar.php',
+                    data: dataString,
+                    success: function(data) {
+                        //Escribimos las sugerencias que nos manda la consulta
+                        $('#suggestions').fadeIn(1000).html(data);
+                        //Al hacer click en algua de las sugerencias
+                        $('.suggest-element').on('click', function(){
+                                //Obtenemos la id unica de la sugerencia pulsada
+                                var id = $(this).attr('id');
+                                //Editamos el valor del input con data de la sugerencia pulsada
+                                $('#empresa').val($('#'+id).attr('data'));
+                                //Hacemos desaparecer el resto de sugerencias
+                                $('#suggestions').fadeOut(1000);
+                                //alert('Has seleccionado el '+id+' '+$('#'+id).attr('data'));
+                                //return false;
+                        });
+                        $('#empresa').blur(function() {
+                          //alert('Handler for .blur() called.');
+                          // tu codigo ajax va dentro de esta function...
+                          $('#suggestions').fadeOut(1000);
+                        });
+                    }
+                });
+            });
+        }); 
+        </script>
+        <script>
+        $(document).ready(function() {
+            $('#puesto').on('keyup', function() {
+                var puesto = $(this).val();		
+                var dataString = 'puesto='+puesto;
+        	$.ajax({
+                    type: 'POST',
+                    url: 'modulos/curriculum/buscar.php',
+                    data: dataString,
+                    success: function(data) {
+                        //Escribimos las sugerencias que nos manda la consulta
+                        $('#suggestionsp').fadeIn(1000).html(data);
+                        //Al hacer click en algua de las sugerencias
+                        $('.suggest-elementp').on('click', function(){
+                                //Obtenemos la id unica de la sugerencia pulsada
+                                var id = $(this).attr('id');
+                                //Editamos el valor del input con data de la sugerencia pulsada
+                                $('#puesto').val($('#'+id).attr('data'));
+                                //Hacemos desaparecer el resto de sugerencias
+                                $('#suggestionsp').fadeOut(1000);
+                                //alert('Has seleccionado el '+id+' '+$('#'+id).attr('data'));
+                                //return false;
+                        });
+                        $('#puesto').blur(function() {
+                          //alert('Handler for .blur() called.');
+                          // tu codigo ajax va dentro de esta function...
+                          $('#suggestionsp').fadeOut(1000);
+                        });
+                    }
+                });
+            });
+        }); 
+        </script>
+		<h1>Curriculum</h1>
+		<div class="contenido">
+        <div id="infoCurriculo">
+			<div style="float: right; background: #FFF; padding: 0px 0px 0px 10px;">
+				<table>
+					<tbody><tr>
+						<td><img src="apariencia/imagenes/icono_imprimir.png"></td>
+						<td><a href="curriculo.php" style="text-decoration: none;">Imprimir</a></td>
+					</tr>
+				</tbody></table>
+			</div>
+			<h2>Currículo</h2>
+		</div>
+		<div class="nivel2">
+            <h3>Subir Foto</h3>
+			
+        	<div class="container" style="min-height:200px;">
+        	<!--<div class=''>
+        	</div>-->
+            <div class="container">
+            	Puede cambiar su foto del currículo, los formatos válidos son: jpg, png, gif, jpeg. Los pasos a seguir son:<br>
+                1. Dar click en el botón "Cambiar Foto".<br>
+                2. Clic en Examinar para buscar foto en el disco y al encontrar el archivo, dar click en "Abrir".<br>
+                3. Seleccione la dimensión de la foto según su preferencia.<br>
+                4. Finalmente dar click en botón "Cortar y Guardar".<br>
+                5. Tutorial: <a href="https://inscripcion.esen.edu.sv/asistencia/SubirFotoCV.mp4" target="_blank">Aquí</a>
+        	<div>
+                <img class="img-rectangle" id="profile_picture" height="120" src="./ESEN - Registro Académico_files/img/perfil.png" data-holder-rendered="true" style="height: 120px;" src="./archivo.php?hac=vfcu">
+        		<br><br>
+        		<a type="button" class="btn btn-primary" id="change-profile-pic">Cambiar Foto</a>
+        	</div>
+        	<div id="profile_pic_modal" class="modal fade">
+        		<div class="modal-dialog">
+        			<div class="modal-content">
+        				<div class="modal-header">
+        					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        				   Cambiar Foto
+        				</div>
+        				<div class="modal-body">
+        					<form id="cropimage" method="post" enctype="multipart/form-data" action="./cambiar_pic.php">
+        						<strong>Cargar Imagen:</strong> <br><br>
+        						<input type="file" name="profile-pic" id="profile-pic">
+        						<input type="hidden" name="hdn-profile-id" id="hdn-profile-id" value="1">
+        						<input type="hidden" name="hdn-x1-axis" id="hdn-x1-axis" value="">
+        						<input type="hidden" name="hdn-y1-axis" id="hdn-y1-axis" value="">
+        						<input type="hidden" name="hdn-x2-axis" value="" id="hdn-x2-axis">
+        						<input type="hidden" name="hdn-y2-axis" value="" id="hdn-y2-axis">
+        						<input type="hidden" name="hdn-thumb-width" id="hdn-thumb-width" value="">
+        						<input type="hidden" name="hdn-thumb-height" id="hdn-thumb-height" value="">
+        						<input type="hidden" name="action" value="" id="action">
+        						<input type="hidden" name="image_name" value="" id="image_name">
+        						
+        						<div id="preview-profile-pic"></div>
+        					<div id="thumbs" style="padding:5px; width:600px"></div>
+        					<input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+        				</div>
+        				<div class="modal-footer">
+        					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        					<button type="button" id="save_crop" class="btn btn-primary">Cortar &amp; Guardar</button>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        		
+        </div><br>
+		</div>
+        <h3>Educación</h3>
+		<div class="nivel2">
+			<form id="frmVerEducacion" method="post" action="index.php?mod=curriculum&amp;hac=aest">
+                <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="4"><input type="submit" value="Agregar Educación" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Experiencia Laboral</h3>
+		<div class="nivel2">
+			<form id="frmVerExperienciasLaborales" method="post" action="index.php?mod=curriculum&amp;hac=aexp">
+                <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="4"><input type="submit" value="Agregar Experiencia" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+		<h3>Información General</h3>
+		<div class="nivel2">
+			<form id="frmVerEducacion" method="post" action="index.php?mod=curriculum&amp;hac=agen">
+                <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="5"><input type="submit" value="Agregar Información" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Perfil</h3>
+        <div class="nivel2">
+			<form id="frmVerPerfil" method="post" action="index.php?mod=curriculum&amp;hac=aper">
+                    <input id="codu" name="codu" type="hidden" value="11359">
+                    <table class="informacion" style="width: 718px;">
+                <tbody><tr>
+					<td>Perfil:</td>
+					<td><textarea name="perfil" id="perfil" rows="3" cols="90" maxlength="250"></textarea></td>
+                </tr><tr>
+				<td colspan="2"><input type="submit" id="guardar" name="guardar" value="Guardar" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Reconocimientos</h3>
+        <div class="nivel2">
+			<form id="frmVerReconocimientos" method="post" action="index.php?mod=curriculum&amp;hac=arec">
+                    <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="3"><input type="submit" value="Agregar Reconocimiento" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Intereses</h3>
+        <div class="nivel2">
+			<form id="frmVerIntereses" method="post" action="index.php?mod=curriculum&amp;hac=aint">
+                <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="2"><input type="submit" value="Agregar Interés" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Idiomas</h3>
+        <div class="nivel2">
+			<form id="frmVerIdiomas" method="post" action="index.php?mod=curriculum&amp;hac=aidi">
+                <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="3"><input type="submit" value="Agregar Idioma" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Otros</h3>
+		<div class="nivel2">
+			<form name="frmExtranjero" method="post" action="index.php?mod=curriculum&amp;hac=aext">
+                <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="2"><input type="submit" id="guardar" name="guardar" value="Guardar" class="boton4"></td>
+			</tr>
+		</tbody></table>
+    <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Referencias</h3>
+		<div class="nivel2">
+			<form id="frmVerEducacion" method="post" action="index.php?mod=curriculum&amp;hac=aref">
+                <table class="informacion" style="width: 718px;"><tbody><tr>
+				<td colspan="5"><input type="submit" value="Agregar Referencia" class="boton4"></td>
+			</tr>
+		</tbody></table>
+        <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div><h3>Preferencias</h3>
+				<div class="nivel2">
+					<form id="frmPreferencias" method="post" action="index.php?mod=curriculum&amp;hac=gpre">
+			<table class="informacion" style="width: 718px;">
+				<tbody><tr>
+					<td colspan="3"><span class="informacion">1=Mayor Preferencia &nbsp; 11=Menor Preferencia</span></td>
+				</tr>
+				<tr><td><select name="pref[28]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Ciencia de datos</td><td><select name="pref[34]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Desarrollo institucional</td><td><select name="pref[26]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Economía</td></tr><tr><td><select name="pref[29]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Finanzas/riesgos</td><td><select name="pref[31]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Investigación</td><td><select name="pref[32]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Mercadeo</td></tr><tr><td><select name="pref[25]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Negocios/emprendimiento</td><td><select name="pref[30]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Políticas públicas</td><td><select name="pref[27]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Proyectos</td></tr><tr><td><select name="pref[33]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Talento humano</td><td><select name="pref[35]">
+		<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Tecnología e innovación</td><td colspan="1"></td></tr>
+					<tr>
+						<td colspan="3"><input id="guardarP" type="submit" value="Guardar Preferencias" class="boton4"></td>
+					</tr>
+				</tbody></table>
+			<input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+				</div><div class="finModulo"></div></div>
+                </div>
+                                                        <div class="informacion">
+                                                                <div class="autor">
+                                                                        Registro Académico<br>
+                                                                        ESEN
+                                                                </div>
+                                                                <div class="tiempo">
+                                                                        Fecha: <span id="fecha">Lunes 14 de Septiembre de 2026</span><br>
+                                                                        Hora: <span id="hora">02:26:34 p.m.</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        
+                                </div><div id="vldt-unmoderated-testing" class="vldt-installed" style="display: none;"></div></body></html>

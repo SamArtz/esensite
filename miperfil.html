@@ -1,0 +1,242 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+                                                        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                                                        <meta name="csrf-token" content="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02">
+                                                        <title>ESEN - Registro Académico</title>
+                                                        <link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+                                                        <link href="./ESEN - Registro Académico_files/esen.css" rel="stylesheet" type="text/css">
+                                                        <script src="javascripts/sistema/tiempo.js?v=2" type="text/javascript"></script>
+                                                        <script src="javascripts/sistema/general.js" type="text/javascript"></script>
+                                        <link rel="stylesheet" type="text/css" href="chrome-extension://mfidniedemcgceagapgdekdbmanojomk/css/content-shared.css"><link rel="stylesheet" type="text/css" href="chrome-extension://mfidniedemcgceagapgdekdbmanojomk/css/content-lite.css"></head>
+                                        <body onload="inicIniciarTiempo('September 14, 2026 14:18:0');">
+                                                <div class="principal">
+                                                        <div class="encabezado">
+                        <div class="menu"><a href="./ESEN - Registro Académico.html" class="menuPrincipal">Inicio</a> |
+                        <a href="./miperfil.html" class="menuPrincipal">Mi Perfil</a> |
+                        <a href="./curriculo.html" class="menuPrincipal">Currículo</a> | <a name="m4" id="m4" href="./notas.html" class="menuPrincipal">Notas</a>
+ | <a name="m2" id="m2" href="./inscripcion.html" class="menuPrincipal">Inscripción</a>
+ | <a name="m3" id="m3" href="" class="menuPrincipal">Evaluación</a>
+ | <a href="" class="menuPrincipal">Ayudantes</a></div>
+                        <div class="autenticacion">Usted está identificado/a como:
+                                        <div>
+                                                <img src="./ESEN - Registro Académico_files/img/perfil.png" class="foto">
+                                                20245456<br>
+                                                Eduardo Javier<br>
+                                                Moreira Duarte<br><br>
+                                                <input type="submit" value="Cerrar Sesión" class="boton2" onclick="document.location.href='login.html';">
+                                        </div></div>
+                </div>
+                <div class="modulo">
+                                <script src="javascripts/sistema/ajax.js" type="text/javascript"></script>
+		<script src="javascripts/sistema/perfil.js" type="text/javascript"></script>
+        <script src="javascripts/sistema/curriculum.js" type="text/javascript"></script>		
+		<h1>Mi Perfil</h1>
+		<div class="contenido"><div class="panelIzquierdo">
+				<h2>Opciones</h2>
+				<a href="javascript:perfOcultarTodo('infoExpediente');">Expediente</a>
+				<a href="javascript:perfOcultarTodo('cambioClave');">Cambio de Contraseña</a>
+				<p>
+					Su perfil se encuentra sincronizado con diversos servicios de ESEN, manténgalo actualizado.<br><br>
+					Para todos los formularios:
+					<span class="obligatorio">(*) Campos obligatorios.</span>
+					<br><br>
+					Los siguientes íconos significan:<br><br>
+					<img src="apariencia/imagenes/botonEditar.png" style="border: 0px;" title="Editar"> Editar<br><br>
+					<img src="apariencia/imagenes/botonEliminar.png" style="border: 0px;" title="Eliminar"> Eliminar
+				</p>
+			</div>
+			<div class="panelDerecho">
+				<div id="infoExpediente">
+					<h2>Expediente</h2>
+					<form method="post" action="">
+					<img src="./ESEN - Registro Académico_files/img/perfil.png" class="fotoGrande">
+					<table class="informacion">
+						<tbody>
+							<tr>
+								<td>Usuario/Carnet:</td><td>20245456</td>
+							</tr>
+							<tr>
+								<td>Nombres:</td><td>Eduardo Javier</td>
+							</tr>
+							<tr>
+								<td>Apellidos:</td><td>Moreira Duarte</td>
+							</tr>
+							<tr>
+								<td>
+									NIE:<br>	
+									<span class="informacion">Número de Identificación Estudiantil</span>
+								</td>
+								<td>5239242</td>
+							</tr>
+							<tr>
+								<td>Teléfono Fijo: <span class="obligatorio">(*)</span></td><td><input name="fijo" type="text" value="(503)2445-9574" maxlength="30"></td>
+							</tr>
+							<tr>
+								<td>Teléfono Móvil:</td>
+								<td>
+									<input name="movil" type="text" value="(503)6063-5550" maxlength="30">
+								</td>
+							</tr>
+                            <tr>
+								<td>Linkedin:</td>
+								<td>
+									<input name="linkedin" type="text" value="" maxlength="100">
+								</td>
+							</tr>
+							<tr>
+								<td>Dirección:</td>
+								<td>
+									<input name="direccion" type="text" value="Residencial Luna Maya" style="width: 350px;">
+								</td>
+							</tr>
+							<tr>
+								<td>Departamento:</td>
+								<td>
+									<select id="departamento" name="departamento" onchange="perfActualizarCiudades();">
+			<option value="0">-- Seleccione --</option><option value="2" selected="selected">San Salvador</option><option value="3">San Vicente</option><option value="8">Cabañas</option><option value="9">La Libertad</option><option value="10">Usulután</option><option value="11">Ahuachapán</option><option value="12">Santa Ana</option><option value="13">Morazán</option><option value="14">San Miguel</option><option value="15">La Unión</option><option value="16">Sonsonate</option><option value="17">Cuscatlán</option><option value="18">La Paz</option><option value="19">Chalatenango</option></select>
+								</td>
+							</tr>
+							<tr>
+								<td>Ciudad: <span class="obligatorio">(*)</span></td>
+								<td>
+									<select id="ciudad" name="ciudad"><option value="0">-- Seleccione --</option><option value="1" selected="selected">San Salvador</option><option value="2">Aguilares</option><option value="3">Apopa</option><option value="4">Ayutuxtepeque</option><option value="5">Ciudad Delgado</option><option value="6">Cuscatancingo</option><option value="7">El Paisnal</option><option value="8">Guazapa</option><option value="9">Ilopango</option><option value="10">Mejicanos</option><option value="11">Nejapa</option><option value="12">Panchimalco</option><option value="13">Rosario de Mora</option><option value="14">San Marcos</option><option value="15">San Martín</option><option value="16">Santiago Texacuangos</option><option value="17">Santo Tomás</option><option value="18">Soyapango</option><option value="19">Tonacatepeque</option></select>
+								</td>
+							</tr>
+							<tr>
+								<td>Correo Electrónico: <span class="obligatorio">(*)</span></td>
+								<td>
+									<input name="correo" type="text" value="eduardoj.moreira29@gmail.com" style="width: 350px;"><br>
+									<span class="informacion">Necesario para poder utilizar algunos servicios ESEN</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Fecha de Nacimiento:</td>
+								<td>29/09/2005</td>
+							</tr>
+							<tr>
+								<td>Género:</td><td>Masculino</td>
+							</tr>
+							<tr>
+								<td>Estado Civil:</td><td><select name="estadocivil" id="estadocivil"><option value="2" selected="selected">Soltero</option><option value="4">Casado</option><option value="6">Divorciado</option><option value="8">Viudo</option></select></td>
+							</tr>
+							<tr>
+								<td>Persona Responsable:</td><td><input name="responsable" type="text" value="" style="width: 350px;"></td>
+							</tr>
+							<tr>
+								<td>Año Carrera:</td><td>Primer año</td>
+							</tr>
+							<tr>
+								<td>Carrera:</td><td>Economía y Negocios</td>
+							</tr>
+							<tr>
+								<td>Estado Académico:</td><td>En espera<br><a href="ayuda.php?copf=1" target="_blank" class="ayuda">(conocer más de los estados)</a></td>
+							</tr>
+							<tr>
+								<td><input type="submit" value="Aplicar Cambios" class="boton3"></td><td></td>
+							</tr>
+						</tbody>
+					</table>
+				<input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+				</div>
+				<div id="infoCurriculo" style="display: none;">
+					<div style="float: right; background: #FFF; padding: 0px 0px 0px 10px;">
+						<table>
+							<tbody><tr>
+								<td><img src="apariencia/imagenes/icono_imprimir.png"></td>
+								<td><a href="curriculo.php" style="text-decoration: none;">Imprimir</a></td>
+							</tr>
+						</tbody></table>
+					</div>
+					<h2>Currículo</h2>
+					
+        <!-- <div id="infoCurriculo">
+			<div style="float: right; background: #FFF; padding: 0px 0px 0px 10px;">
+				<table>
+					<tr>
+						<td><img src="apariencia/imagenes/icono_imprimir.png" /></td>
+						<td><a href="curriculo.php" style="text-decoration: none;">Imprimir</a></td>
+					</tr>
+				</table>
+			</div>
+			<h2>Curr&iacute;culo</h2>
+		</div>-->
+        <h3>Educación</h3>
+		<div class="nivel2">
+			<form id="frmVerEducacion" method="post" action="index.php?mod=perfil&amp;hac=aest">
+                    <table class="informacion" style="width: 718px;"><tbody><tr>
+    				<td colspan="4"><input type="submit" value="Agregar Educación" class="boton4"></td>
+    			</tr>
+    		</tbody></table>
+            <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div>
+        <h3>Experiencia Laboral</h3>
+		<div class="nivel2">
+			<form id="frmVerExperienciasLaborales" method="post" action="index.php?mod=perfil&amp;hac=aexp">
+                    <table class="informacion" style="width: 718px;"><tbody><tr>
+    				<td colspan="4"><input type="submit" value="Agregar Experiencia" class="boton4"></td>
+    			</tr>
+    		</tbody></table>
+            <input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+		</div><h3>Preferencias</h3>
+				<div class="nivel2">
+					<form id="frmPreferencias" method="post" action="index.php?mod=perfil&amp;hac=gpre">
+        		<table class="informacion" style="width: 718px;">
+        			<tbody><tr>
+        				<td colspan="3"><span class="informacion">1=Mayor Preferencia &nbsp; 11=Menor Preferencia</span></td>
+        			</tr>
+        			<tr><td><select name="pref[28]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Ciencia de datos</td><td><select name="pref[34]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Desarrollo institucional</td><td><select name="pref[26]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Economía</td></tr><tr><td><select name="pref[29]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Finanzas/riesgos</td><td><select name="pref[31]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Investigación</td><td><select name="pref[32]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Mercadeo</td></tr><tr><td><select name="pref[25]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Negocios/emprendimiento</td><td><select name="pref[30]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Políticas públicas</td><td><select name="pref[27]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Proyectos</td></tr><tr><td><select name="pref[33]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Talento humano</td><td><select name="pref[35]">
+			<option value="0"> </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></select> Tecnología e innovación</td><td colspan="1"></td></tr>
+        				<tr>
+        					<td colspan="3"><input id="guardarP" type="submit" value="Guardar Preferencias" class="boton4"></td>
+        				</tr>
+        			</tbody></table>
+        		<input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+				</div>
+				</div>
+				<div id="cambioClave" style="display: none;">
+					<h2>Cambio de Contraseña</h2>
+					<form method="" action="">
+				<input name="codu" type="hidden" value="">
+				<table class="informacion">
+					<tbody>
+						<tr>
+							<td>Constraseña Actual: <span class="obligatorio">(*)</span></td><td><input name="vclave" type="password"></td>
+						</tr>
+						<tr>
+							<td>Nueva Constraseña: <span class="obligatorio">(*)</span></td><td><input name="nclave" type="password"></td>
+						</tr>
+						<tr>
+							<td>Repetir Nueva Constraseña: <span class="obligatorio">(*)</span></td><td><input name="rnclave" type="password"></td>
+						</tr>
+						<tr>
+							<td><input type="submit" value="Aplicar Cambios" class="boton3"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			<input type="hidden" name="csrf" value="e8d6d60d4e0dd8bac9b6e541171e3c1d1784d95dbc00219b19790686171f3f02"></form>
+				</div>
+			</div><div class="finModulo"></div></div>
+                </div>
+                                                        <div class="informacion">
+                                                                <div class="autor">
+                                                                        Registro Académico<br>
+                                                                        ESEN
+                                                                </div>
+                                                                <div class="tiempo">
+                                                                        Fecha: <span id="fecha">Lunes 14 de Septiembre de 2026</span><br>
+                                                                        Hora: <span id="hora">02:18:07 p.m.</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        
+                                <div id="vldt-unmoderated-testing" class="vldt-installed" style="display: none;"></div></body></html>
